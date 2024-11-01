@@ -1,0 +1,241 @@
+<h1 id="changelog">CHANGELOG</h1>
+<h2 id="1-3-9">1.3.9</h2>
+<ul>
+<li>Added possibility to create new posts</li>
+<li>Added option <code>add_new</code> (true/false) which sets whether to enable creating new</li>
+</ul>
+<h2 id="1-3-8">1.3.8</h2>
+<ul>
+<li>Fixed bug where pasting regular content would cast a TypeError and stop executing</li>
+<li>Fixed Notice when on 404 page</li>
+</ul>
+<h2 id="1-3-7">1.3.7</h2>
+<ul>
+<li>Removed class requirement on auto config</li>
+<li>Added full ACF support</li>
+</ul>
+<h2 id="1-3-6">1.3.6</h2>
+<ul>
+<li>Added option <code>init_on_load</code> to set Fronted loading behavior</li>
+<li>Added filter <code>save_extra_data</code></li>
+<li>Added filter <code>autosave_extra_data</code></li>
+<li>Added more specificity to 3rd party libraries to avoid css conflicts</li>
+<li>Changed so that 3rd party javascript libraries will be enqueued separately</li>
+<li>Fixed p-tags being inserted in auto configured post_title</li>
+<li>Fixed post revisions not honoring the constant <code>WP_POST_REVISIONS</code></li>
+</ul>
+<h2 id="1-3-5">1.3.5</h2>
+<ul>
+<li>Added automatic config of <code>post_content</code>, <code>post_title</code> and <code>post_thumbnail</code> if no settings are set <strong>requires editable contents to be in a wrapping container with class <code>hentry</code> like <code>&lt;article class=&quot;hentry&quot;&gt;&lt;h1 class=&quot;entry-title&quot;&gt;&lt;/h1&gt;&lt;div class=&quot;entry-content&quot;&gt;&lt;/entry-content&gt;&lt;/article&gt;</code></strong>, can be turned off by setting <code>auto_configure</code> to <code>false</code></li>
+<li>Added option <code>auto_configure</code></li>
+<li>Added check/set post locks</li>
+<li>Removed <a href="https://github.com/YahnisElsts/plugin-update-checker">plugin-update-checker</a> in favor for the official plugin repo</li>
+</ul>
+<h2 id="1-3">1.3</h2>
+<ul>
+<li>Added <a href="https://github.com/fusioneng/Shortcake">Shortcake</a> integration (<strong>requires Shortcake v0.6.0</strong>)</li>
+<li>Added ability to send boolean through <code>permission</code> setting (see issue <a href="https://github.com/jesperbjerke/wa-fronted/issues/17">#17</a>)</li>
+<li>Added ability to set capability as <code>permission</code> setting</li>
+<li>Added logged in session check</li>
+<li>Added ability to edit custom excerpt</li>
+<li>Changed page reload after save to show notification toast instead</li>
+<li>Changed when scripts are loaded so we only need to check for options once</li>
+<li>Changed <code>wpautop</code> in TinyMCE to <code>false</code> to avoid getting shortcode html comments wrapped in p-tags</li>
+<li>Fixed revisions not sorted by date properly</li>
+<li>Fixed shortcode rendering and binding when stepping through revisions</li>
+<li>Fixed autosaving running even though post is already saving</li>
+</ul>
+<h2 id="1-2-1">1.2.1</h2>
+<ul>
+<li>Added button to remove shortcode</li>
+<li>Added action <code>wa_fronted_footer_scripts</code></li>
+<li>Added modifications to support <a href="https://github.com/fusioneng/Shortcake">Shortcake</a> integration</li>
+<li>Changed a select2 selectors to be more specific in order to avoid conflicts</li>
+</ul>
+<h2 id="1-2">1.2</h2>
+<ul>
+<li>Added CTRL + click link in editor to open in new tab/window</li>
+<li>Fixed shortcodes not being filtered on save</li>
+<li>Fixed shortcode edit button not binding on load</li>
+<li>Fixed gallery images triggering resize handles and image toolbar</li>
+<li>Fixed gallery not being rendered on insert</li>
+<li>Fixed gallery editing and shortcode binding</li>
+</ul>
+<h2 id="1-1">1.1</h2>
+<ul>
+<li>Switched Medium Editor to TinyMCE in order to be closer to WP Core</li>
+<li>Added filter <code>featured_image_toolbar</code></li>
+<li>Added filter <code>on_tinymce_setup</code></li>
+<li>Added option <code>shortcodes</code></li>
+<li>Changed filter <code>medium_extensions</code> to <code>editor_plugins</code></li>
+<li>Changed options saved to session to be saved to WA_Fronted::options instead</li>
+<li>Changed so that WA_Fronted::$options is not JSON encoded until it&#39;s sent to javascript</li>
+<li>Fixed issue <a href="https://github.com/jesperbjerke/wa-fronted/issues/13">#13</a></li>
+<li>Fixed faulty compilation of options based on field types</li>
+</ul>
+<h2 id="1-0">1.0</h2>
+<ul>
+<li>Fixed shortcode edit and image edit toolbar taking up space in footer</li>
+<li>Fixed problem with image dragging and showing the image edit toolbar</li>
+<li>Fixed shortcodes not rendering when showing revisions</li>
+<li>Fixed a few CSS kinks</li>
+<li>Fixed image align left and center</li>
+<li>Made an <a href="http://fronted.westart.se">online demo</a></li>
+</ul>
+<h2 id="0-9-5">0.9.5</h2>
+<ul>
+<li>Added autosaving</li>
+<li>Added filter <code>wa_fronted_get_autosave</code></li>
+<li>Added filter <code>wa_fronted_autosave_data</code></li>
+<li>Added filter <code>wa_get_js_i18n</code></li>
+<li>Added translation function for javascript</li>
+<li>Added ability to edit rendered shortcodes</li>
+<li>Added filter <code>shortcode_actions</code></li>
+<li>Added action <code>shortcode_action_{shortcode base}</code></li>
+<li>Fixed faulty regex in <code>wa_render_shortcode</code></li>
+<li>Fixed faulty regex in <code>filter_shortcodes</code> if there were multiple occurrences of the exact same shortcode</li>
+<li>Fixed faulty regex in <code>unfilter_shortcodes</code></li>
+</ul>
+<h2 id="0-9-1">0.9.1</h2>
+<ul>
+<li>Updated Medium Editor to 5.8.3</li>
+<li>Fixed typo in the PHP version check</li>
+<li>Cleaned up and restructured README.md for 1.0 release</li>
+<li>Added javascript and php function reference to the Wiki</li>
+<li>Added extension how-to guide to the Wiki</li>
+</ul>
+<h2 id="0-9">0.9</h2>
+<ul>
+<li>Added ability to set post parent to hierarchical post types</li>
+<li>Added ability to drag image to move it within the editable area</li>
+<li>Added PHP version check before init</li>
+<li>Made the image upload button into an extendable toolbar element</li>
+<li>Added javascript filter <code>image_upload_toolbar</code></li>
+<li>Added javascript filter <code>image_edit_toolbar</code></li>
+<li>Added <a href="https://github.com/timdown/rangy">Rangy</a></li>
+<li>Updated Plugin Update Checker to master branch</li>
+</ul>
+<h2 id="0-8-5">0.8.5</h2>
+<ul>
+<li>Added support for adding/managing taxonomies, categories and tags</li>
+<li>Added post revision handling</li>
+<li>Added php filter <code>wa_fronted_revisions</code></li>
+<li>Added javascript filter <code>revision_content</code></li>
+<li>Added javascript filter <code>revision_db_value</code></li>
+<li>Changed jQuery UI selectmenu to <a href="https://select2.github.io/">select2</a></li>
+<li>Moved documentation to Wiki</li>
+</ul>
+<h2 id="0-8">0.8</h2>
+<ul>
+<li>Updated Medium Editor to 5.8.2</li>
+<li>Updated Tipso to 1.0.6</li>
+<li>Added ability to save data to wp_options table</li>
+<li>Added trim() before saving content to remove excessive whitespace</li>
+<li>Ability to set default options in posttype-level of array</li>
+<li>Styled checkboxes in settings modal</li>
+</ul>
+<h2 id="0-7-5">0.7.5</h2>
+<ul>
+<li>Updated Medium Editor to 5.8.1</li>
+<li>Added multiple <code>output_to</code> support</li>
+<li>Added support for writing shortcodes</li>
+<li>Added toolbar button <code>renderShortcode</code></li>
+<li>Fixed some toolbar buttons not being rendered</li>
+<li>Fixed issue where image with caption would not render if inserted without selection</li>
+<li>Fixed issue with aligning/editing/removing images with caption</li>
+</ul>
+<h2 id="0-7">0.7</h2>
+<ul>
+<li>Added choice-based fields (enables dropdown select to choose between values to insert) for custom fields</li>
+<li>Added support for ACF fields: <code>select</code> and <code>radio</code> </li>
+<li>Added ability to omit <code>selector</code> and only set <code>attr</code> in <code>output_to</code> to target the editor element</li>
+<li>Removed fatal error trigger if no configuration filter found (plugin will just not initialize instead)</li>
+<li>Changed link to Editus (formerly known as Lasso) in README.md</li>
+<li>Fixed issue where the ACF-edit button would be replaced by new content after save</li>
+</ul>
+<h2 id="0-6-5">0.6.5</h2>
+<ul>
+<li>Added native custom field support</li>
+<li>Fixed faulty logic in validation settings in ACF field type switch</li>
+</ul>
+<h2 id="0-6-1">0.6.1</h2>
+<ul>
+<li>Updated Medium Editor to 5.7.0</li>
+<li>Added basic RTL support</li>
+</ul>
+<h2 id="0-6">0.6</h2>
+<ul>
+<li>Updated Medium Editor to 5.6.3</li>
+<li>Added file-api to modernizr</li>
+<li>Added image upload by dropping image to the editable area</li>
+<li>Changed jQuery UI resizable to custom function instead (problems with unnecessary bloated markup and css added by jQuery UI)</li>
+<li>Fixed issue with getting proper image size of square images when resizing</li>
+<li>Performance improvements of image resizing</li>
+<li>Added <code>cleanPastedHTML : true</code> to medium-editor to fix ugly markup when copying and pasting html</li>
+<li>Added image toolbar when clicking on image, mimicking toolbar in tinymce</li>
+</ul>
+<h2 id="0-5">0.5</h2>
+<ul>
+<li>Updated Medium Editor to 5.6.2</li>
+<li>Added Sale price scheduling for WooCommerce</li>
+<li>Added live validation</li>
+<li>Added option <code>paragraphs</code></li>
+<li>Added option <code>validation</code></li>
+</ul>
+<h2 id="0-4-5">0.4.5</h2>
+<ul>
+<li>Updated Medium Editor to 5.6.1</li>
+<li>Added WooCommerce support (as another core extension)</li>
+<li>Added filter <code>supported_woo_fields</code></li>
+<li>Added filter <code>wa_fronted_settings_fields</code></li>
+<li>Added ability to set post as featured</li>
+<li>Added ability allow/disable comments</li>
+<li>Fixed faulty nonce sent through Ajax</li>
+</ul>
+<h2 id="0-4">0.4</h2>
+<ul>
+<li>Updated Medium Editor to 5.6.0</li>
+<li>Refactored <code>wa-fronted.php</code> and <code>scripts.js</code>, separating ACF functions into a core extension</li>
+<li>Added extendability to the javascript object, curtesy of ACF, (mimics wp hooks in PHP like <code>add_action</code> and <code>add_filter</code>)</li>
+<li>Added editor option <code>native</code></li>
+<li>Changed how <code>acf_form()</code> would save since it stopped submitting through Ajax</li>
+<li>Fixed issue where editor toolbar would not respect options since Medium Editor changed <code>disableToolbar</code></li>
+<li>Fixed issue where specific <code>output_to</code> would not search within the container element</li>
+</ul>
+<h2 id="0-3-1">0.3.1</h2>
+<ul>
+<li>Updated Medium Editor to 5.5.3</li>
+</ul>
+<h2 id="0-3">0.3</h2>
+<ul>
+<li>Updated Plugin Update Checker to 2.2</li>
+<li>Changed action hooks <code>wa_before_fronted_scripts</code>, <code>wa_after_fronted_scripts</code> to <code>wa_fronted_before_scripts</code>, <code>wa_fronted_after_scripts</code> (to respect a more uniform naming standard of hooks)</li>
+<li>Added settings modal with options to change different post settings</li>
+<li>Added nonce validation to ajax post save</li>
+<li>Added action hook <code>wa_fronted_settings_form</code></li>
+<li>Added action hook <code>wa_fronted_settings_modal_footer</code></li>
+<li>Added action hook <code>wa_fronted_settings_form_save</code></li>
+<li>Added filter <code>wa_fronted_settings_values</code></li>
+</ul>
+<h2 id="0-2">0.2</h2>
+<ul>
+<li>Added support for featured image</li>
+<li>Disabled and moved unnecessary functions if not logged in and not on frontend</li>
+<li>Added unsaved changes warning if leaving page</li>
+<li>Added action hook <code>wa_fronted_toolbar</code></li>
+</ul>
+<h2 id="0-1-2">0.1.2</h2>
+<ul>
+<li>Removed submodule link of plugin updater</li>
+</ul>
+<h2 id="0-1-1">0.1.1</h2>
+<ul>
+<li>Added updating functionality through github, curtesy of <a href="https://github.com/YahnisElsts/plugin-update-checker">YahnisElsts</a>, as well as automatic background updates</li>
+<li>Added oEmbed support (automatic conversion of valid oEmbed)</li>
+<li>Updated Medium Editor to 5.5.1</li>
+<li>Save options to session, reducing loading/compiling</li>
+</ul>
+<h2 id="0-1">0.1</h2>
+<ul>
+<li>First public release</li>
+</ul>
